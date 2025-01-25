@@ -1,18 +1,14 @@
 package pruebas;
 
 import service.MetodosCliente;
+import service.MetodosServidor;
 
 public class Prueba {
 
     public static void main(String[] args) {
-        String [] datosOperar = new String [3];
-
-        MetodosCliente metodosCliente = new MetodosCliente();
-        metodosCliente.operacionParaServidor(datosOperar);
-
-        for(String str : datosOperar) {
-            System.out.println(str);
-        }
+        MetodosServidor metodosServidor = new MetodosServidor();
+        String [] operacion = {"2", "+", "3"};
+        metodosServidor.elegirOperacion(operacion);
     }
 
 }
