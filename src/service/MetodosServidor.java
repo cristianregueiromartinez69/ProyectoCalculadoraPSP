@@ -2,6 +2,11 @@ package service;
 
 public class MetodosServidor {
 
+    public String [] devolverResultado(String [] operacion, int resultado){
+        String resultadoString = String.valueOf(resultado);
+        return new String[]{operacion[0],operacion[1],operacion[2], resultadoString};
+    }
+
     public int elegirOperacion(String[] operacion) {
         String operando = operacion[1];
         return switch (operando) {
