@@ -27,9 +27,7 @@ public class Cliente {
 
             String [] datosRecibidos = (String[]) input.readObject();
 
-            for(String str : datosRecibidos){
-                System.out.println(str);
-            }
+            metodosCliente.mensajeRecibidoServidor(datosRecibidos);
 
         }catch(IOException e){
             System.out.println("Ups, error al conectarse al socket del servidor");

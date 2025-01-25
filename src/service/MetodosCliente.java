@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class MetodosCliente {
 
+    public void mensajeRecibidoServidor(String [] resultado){
+        System.out.println("El resultado de " + resultado[0] + " " +  resultado[1] + " " +  resultado[2] + " es: " + resultado[3]);
+    }
+
     public void operacionParaServidor(String[] operacion){
 
         System.out.println("Introdudce el primer número de la operación: ");
