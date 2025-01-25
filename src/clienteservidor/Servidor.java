@@ -1,5 +1,7 @@
 package clienteservidor;
 
+import service.MetodosServidor;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -10,6 +12,7 @@ public class Servidor {
     public static void main(String[] args) {
 
         int puerto = 6666;
+        MetodosServidor metodosServidor = new MetodosServidor();
         try(ServerSocket serverSocket = new ServerSocket(puerto)){
             System.out.println("Servidor iniciado, esperando a conexiones");
             Socket socket = serverSocket.accept();
@@ -20,7 +23,9 @@ public class Servidor {
 
             String [] datosRecibidos = (String [])input.readObject();
 
-            output.writeObject(datosRecibidos);
+            String [] transDatosRecibidos = metodosServidor.devolverResultado(datosRecibidos, metodosServidor.elegirOperacion(datosRecibidos));
+
+            output.writeObject(transDatosRecibidos);
 
 
         }catch(IOException e){

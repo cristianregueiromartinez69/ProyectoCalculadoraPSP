@@ -19,38 +19,30 @@ public class MetodosServidor {
     }
 
     public int sumaNumeros(String[] operacion) {
-        int suma = 0;
         String operando1 = operacion[0];
         String operando2 = operacion[2];
 
-        suma = Integer.parseInt(operando1) + Integer.parseInt(operando2);
-        return suma;
+        return Integer.parseInt(operando1) + Integer.parseInt(operando2);
     }
 
     public int restaNumeros(String[] operacion) {
-        int resta = 0;
         String operando1 = operacion[0];
         String operando2 = operacion[2];
 
-        resta = Integer.parseInt(operando1) - Integer.parseInt(operando2);
-        return resta;
+        return Integer.parseInt(operando1) - Integer.parseInt(operando2);
     }
 
     public int multiplicarNumeros(String[] operacion) {
-        int multiplicacion = 0;
         String operando1 = operacion[0];
         String operando2 = operacion[2];
 
-        multiplicacion = Integer.parseInt(operando1) * Integer.parseInt(operando2);
-        return multiplicacion;
+        return Integer.parseInt(operando1) * Integer.parseInt(operando2);
     }
 
     public int dividirNumeros(String[] operacion) {
-        int dividir = 0;
         String operando1 = operacion[0];
         String operando2 = operacion[2];
-        dividir = Integer.parseInt(operando1) / Integer.parseInt(operando2);
-        return dividir;
+        return Integer.parseInt(operando1) / Integer.parseInt(operando2);
     }
 
 }
