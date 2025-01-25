@@ -2,15 +2,18 @@ package service;
 
 public class MetodosServidor {
 
-    public void elegirOperacion(String [] operacion){
+    public int elegirOperacion(String[] operacion) {
         String operando = operacion[1];
-
-        switch(operando){
-            case "+":
-        }
+        return switch (operando) {
+            case "+" -> sumaNumeros(operacion);
+            case "-" -> restaNumeros(operacion);
+            case "*" -> multiplicarNumeros(operacion);
+            case "/" -> dividirNumeros(operacion);
+            default -> 0;
+        };
     }
 
-    public int sumaNumeros(String [] operacion){
+    public int sumaNumeros(String[] operacion) {
         int suma = 0;
         String operando1 = operacion[0];
         String operando2 = operacion[2];
@@ -18,4 +21,31 @@ public class MetodosServidor {
         suma = Integer.parseInt(operando1) + Integer.parseInt(operando2);
         return suma;
     }
+
+    public int restaNumeros(String[] operacion) {
+        int resta = 0;
+        String operando1 = operacion[0];
+        String operando2 = operacion[2];
+
+        resta = Integer.parseInt(operando1) - Integer.parseInt(operando2);
+        return resta;
+    }
+
+    public int multiplicarNumeros(String[] operacion) {
+        int multiplicacion = 0;
+        String operando1 = operacion[0];
+        String operando2 = operacion[2];
+
+        multiplicacion = Integer.parseInt(operando1) * Integer.parseInt(operando2);
+        return multiplicacion;
+    }
+
+    public int dividirNumeros(String[] operacion) {
+        int dividir = 0;
+        String operando1 = operacion[0];
+        String operando2 = operacion[2];
+        dividir = Integer.parseInt(operando1) / Integer.parseInt(operando2);
+        return dividir;
+    }
+
 }
