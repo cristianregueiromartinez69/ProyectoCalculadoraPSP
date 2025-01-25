@@ -7,7 +7,7 @@ public class Cliente {
     public static void main(String[] args) {
 
         int puerto = 6666;
-        String [] datosOperar = new String [2];
+        String [] datosOperar = new String [3];
 
         try(Socket socket = new Socket("localhost", puerto)){
 

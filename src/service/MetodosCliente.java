@@ -10,7 +10,7 @@ public class MetodosCliente {
         Scanner sc = new Scanner(System.in);
         String numero1 = sc.nextLine();
 
-        while(comprobarDigitos(numero1)){
+        while(!comprobarDigitos(numero1)){
             System.out.println("Número incorrecto, por favor, introduce un número válido: ");
             numero1 = sc.nextLine();
         }
@@ -18,12 +18,28 @@ public class MetodosCliente {
         System.out.println("Introduce una operación: ");
         String auxOperacion = sc.nextLine();
 
+        while(!comprobarOperacion(auxOperacion)){
+            System.out.println("Operación incorrecta, por favor, introduce una operación válida: ");
+            auxOperacion = sc.nextLine();
+        }
+
+        System.out.println("Introduce el segundo número de la operación: ");
+        String numero2 = sc.nextLine();
+
+        while(!comprobarDigitos(numero2)){
+            System.out.println("Número incorrecto, por favor, introduce un número válido: ");
+            numero2 = sc.nextLine();
+        }
+
+        operacion[0] = numero1;
+        operacion[1] = auxOperacion;
+        operacion[2] = numero2;
+
     }
 
     public boolean comprobarDigitos(String numero){
-        String [] numeros = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
-        for (String s : numeros) {
-            if (s.equals(numero)) {
+        for(char c : numero.toCharArray()){
+            if(Character.isDigit(c)){
                 return true;
             }
         }
