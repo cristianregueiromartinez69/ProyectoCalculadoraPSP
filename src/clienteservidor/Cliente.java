@@ -17,16 +17,24 @@ public class Cliente {
 
             System.out.println("Conexion establecida con el servidor");
 
-            ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
+
             ObjectOutputStream output = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
 
             metodosCliente.operacionParaServidor(datosOperar);
 
             output.writeObject(datosOperar);
 
+            String [] datosRecibidos = (String[]) input.readObject();
+
+            for(String str : datosRecibidos){
+                System.out.println(str);
+            }
 
         }catch(IOException e){
             System.out.println("Ups, error al conectarse al socket del servidor");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Ups, clase no encontrada");
         }
 
     }
