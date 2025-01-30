@@ -51,7 +51,7 @@ public class MetodosCliente {
     }
 
     public boolean comprobarOperacion(String operacion){
-        String [] operaciones = {"+", "-", "/", "*"};
+        String [] operaciones = {"+", "-", "/", "*", "%", "^"};
         for (String s : operaciones) {
             if (s.equals(operacion)) {
                 return true;

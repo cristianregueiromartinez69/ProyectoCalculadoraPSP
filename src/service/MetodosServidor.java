@@ -14,6 +14,8 @@ public class MetodosServidor {
             case "-" -> restaNumeros(operacion);
             case "*" -> multiplicarNumeros(operacion);
             case "/" -> dividirNumeros(operacion);
+            case "%" -> porcentajeNumeros(operacion);
+            case "^" -> potenciaNumeros(operacion);
             default -> 0;
         };
     }
@@ -50,6 +52,20 @@ public class MetodosServidor {
         }
     }
 
+    public int porcentajeNumeros(String[] operacion) {
+        String operando1 = operacion[0];
+        String operando2 = operacion[2];
+        float resultado = (Float.parseFloat(operando1) / 100) * Float.parseFloat(operando2);
+        return (int) resultado;
+    }
 
+
+    public int potenciaNumeros(String[] operacion) {
+        String operando1 = operacion[0];
+        String operando2 = operacion[2];
+
+        float resultado = (float) Math.pow(Float.parseFloat(operando1), Float.parseFloat(operando2));
+        return (int) resultado;
+    }
 
 }
