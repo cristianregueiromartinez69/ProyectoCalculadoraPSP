@@ -42,7 +42,14 @@ public class MetodosServidor {
     public int dividirNumeros(String[] operacion) {
         String operando1 = operacion[0];
         String operando2 = operacion[2];
-        return Integer.parseInt(operando1) / Integer.parseInt(operando2);
+
+        try{
+            return Integer.parseInt(operando1) / Integer.parseInt(operando2);
+        }catch(ArithmeticException e){
+            return 0;
+        }
     }
+
+
 
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MetodosCliente {
 
     public void mensajeRecibidoServidor(String [] resultado){
-        System.out.println("El resultado de " + resultado[0] + " " +  resultado[1] + " " +  resultado[2] + " es: " + resultado[3]);
+        System.out.println("El resultado es " + resultado[3]);
     }
 
     public void operacionParaServidor(String[] operacion){
@@ -59,5 +59,7 @@ public class MetodosCliente {
         }
         return false;
     }
+
+
 
 }
